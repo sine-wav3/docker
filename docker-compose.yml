@@ -1,3 +1,4 @@
+version: '3.8'
 services:
 
   nginx:
@@ -56,10 +57,12 @@ services:
     volumes:
       - ./jupyter:/home/jovyan/work
     networks:
-      - backend
+      - backend  
 
 volumes:
   postgres_data:
 
 networks:
   backend:
+
+
