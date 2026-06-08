@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int         @id @default(autoincrement())
+  name       String
+  email      String      @unique
+  createdAt  DateTime    @default(now())
+  stressJobs StressJob[]
+}
+
+model StressJob {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  createdAt   DateTime @default(now())
+  userId      Int
+  metrics     Metric[]
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model Metric {
+  id          Int       @id @default(autoincrement())
+  cpuUsage    Float
+  memoryUsage Float
+  createdAt   DateTime  @default(now())
+  stressJobId Int
+  stressJob   StressJob @relation(fields: [stressJobId], references: [id])
+}

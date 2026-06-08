@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///home/usuario/proyecto-entorno/nextjs/app/api/stress/cpu/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\n\nfunction fibonacci(n: number): number {\n  if (n <= 1) return n;\n\n  return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nexport async function GET() {\n\n  const start = Date.now();\n\n  fibonacci(42);\n\n  const end = Date.now();\n\n  return NextResponse.json({\n    message: \"CPU Stress terminado\",\n    duration: `${end - start} ms`\n  });\n\n}\n"],"names":["fibonacci","n","GET","start","Date","now","end","json","message","duration"],"mappings":";;;;AAAA;;AAEA,SAASA,UAAUC,CAAS;IAC1B,IAAIA,KAAK,GAAG,OAAOA;IAEnB,OAAOD,UAAUC,IAAI,KAAKD,UAAUC,IAAI;AAC1C;AAEO,eAAeC;IAEpB,MAAMC,QAAQC,KAAKC,GAAG;IAEtBL,UAAU;IAEV,MAAMM,MAAMF,KAAKC,GAAG;IAEpB,OAAO,kVAAY,CAACE,IAAI,CAAC;QACvBC,SAAS;QACTC,UAAU,GAAGH,MAAMH,MAAM,GAAG,CAAC;IAC/B;AAEF"}}]
+}

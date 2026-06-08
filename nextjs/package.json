@@ -1,0 +1,33 @@
+{
+  "name": "proyecto-stress",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "seed": "tsx prisma/seed/seed.ts"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "@prisma/client": "6.19.3",
+    "next": "16.2.7",
+    "pg": "^8.21.0",
+    "prisma": "6.19.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "recharts": "^3.8.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.7",
+    "tailwindcss": "^4",
+    "tsx": "^4.22.4",
+    "typescript": "^5"
+  }
+}

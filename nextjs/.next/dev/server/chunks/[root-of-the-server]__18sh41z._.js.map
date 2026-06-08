@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///home/usuario/proyecto-entorno/nextjs/app/api/stress/total/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\n\nexport async function GET() {\n\n  const start = Date.now();\n\n  try {\n\n    await Promise.all([\n      fetch(\"http://localhost:3000/api/stress/cpu\"),\n      fetch(\"http://localhost:3000/api/stress/db\"),\n      fetch(\"http://localhost:3000/api/stress/web\")\n    ]);\n\n    const end = Date.now();\n\n    return NextResponse.json({\n      success: true,\n      duration: `${end - start} ms`\n    });\n\n  } catch (error) {\n\n    console.error(error);\n\n    return NextResponse.json(\n      {\n        success: false\n      },\n      {\n        status: 500\n      }\n    );\n\n  }\n\n}\n"],"names":["GET","start","Date","now","Promise","all","fetch","end","json","success","duration","error","console","status"],"mappings":";;;;AAAA;;AAEO,eAAeA;IAEpB,MAAMC,QAAQC,KAAKC,GAAG;IAEtB,IAAI;QAEF,MAAMC,QAAQC,GAAG,CAAC;YAChBC,MAAM;YACNA,MAAM;YACNA,MAAM;SACP;QAED,MAAMC,MAAML,KAAKC,GAAG;QAEpB,OAAO,kVAAY,CAACK,IAAI,CAAC;YACvBC,SAAS;YACTC,UAAU,GAAGH,MAAMN,MAAM,GAAG,CAAC;QAC/B;IAEF,EAAE,OAAOU,OAAO;QAEdC,QAAQD,KAAK,CAACA;QAEd,OAAO,kVAAY,CAACH,IAAI,CACtB;YACEC,SAAS;QACX,GACA;YACEI,QAAQ;QACV;IAGJ;AAEF"}}]
+}

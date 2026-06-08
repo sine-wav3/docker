@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///home/usuario/proyecto-entorno/nextjs/lib/prisma.ts"],"sourcesContent":["import { PrismaClient } from '@prisma/client'\n\nconst globalForPrisma = globalThis as unknown as {\n  prisma: PrismaClient | undefined\n}\n\nexport const prisma =\n  globalForPrisma.prisma ??\n  new PrismaClient()\n\nif (process.env.NODE_ENV !== 'production') {\n  globalForPrisma.prisma = prisma\n}\n"],"names":["globalForPrisma","globalThis","prisma"],"mappings":";;;;AAAA;;AAEA,MAAMA,kBAAkBC;AAIjB,MAAMC,SACXF,gBAAgBE,MAAM,IACtB,IAAI,sXAAY;AAElB,wCAA2C;IACzCF,gBAAgBE,MAAM,GAAGA;AAC3B"}},
+    {"offset": {"line": 61, "column": 0}, "map": {"version":3,"sources":["file:///home/usuario/proyecto-entorno/nextjs/app/api/users/route.ts"],"sourcesContent":["import { prisma } from '@/lib/prisma'\nimport { NextResponse } from 'next/server'\n\nexport async function GET() {\n  const users = await prisma.user.findMany({\n    take: 10\n  })\n\n  return NextResponse.json(users)\n}\n"],"names":["GET","users","user","findMany","take","json"],"mappings":";;;;AAAA;AACA;;;AAEO,eAAeA;IACpB,MAAMC,QAAQ,MAAM,0JAAM,CAACC,IAAI,CAACC,QAAQ,CAAC;QACvCC,MAAM;IACR;IAEA,OAAO,kVAAY,CAACC,IAAI,CAACJ;AAC3B"}}]
+}

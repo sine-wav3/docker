@@ -1,0 +1,8 @@
+{
+  "/api/stress/cpu/route": "app/api/stress/cpu/route.js",
+  "/api/stress/db/route": "app/api/stress/db/route.js",
+  "/api/stress/total/route": "app/api/stress/total/route.js",
+  "/api/stress/web/route": "app/api/stress/web/route.js",
+  "/api/system/route": "app/api/system/route.js",
+  "/page": "app/page.js"
+}
